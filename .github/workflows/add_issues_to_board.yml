@@ -1,0 +1,16 @@
+name: Add issue to Caffeine Software project
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: timrogers/add-to-project@timrogers/draft-issue
+        with:
+          project-url: https://github.com/orgs/caffeinesoftware/projects/1
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
